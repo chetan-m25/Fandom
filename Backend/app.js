@@ -7,11 +7,15 @@ dotenv.config();
 
 import authRoutes from './routes/auth.js';
 const app = express();
+app.set('trust proxy', 1);
 
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: true,
+    origin: [
+        'http://localhost:5173',
+        'https://fandom-jyte.onrender.com'
+    ],
     credentials: true
 }));
 

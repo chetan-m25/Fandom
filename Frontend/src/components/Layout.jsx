@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import { Link, Outlet } from "react-router-dom";
 import axios from "axios";
+import BASE_URL from "../api";
 
 const getImg = (name) =>
   new URL(`../assets/images/${name}`, import.meta.url).href;
@@ -42,7 +43,7 @@ const Layout = () => {
   const handleLogout = async () => {
     try {
       await axios.post(
-        "https://fandom-jyte.onrender.com/api/auth/logout",
+        `${BASE_URL}/api/auth/logout`,
         {},
         { withCredentials: true },
       );

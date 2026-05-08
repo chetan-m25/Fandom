@@ -16,7 +16,9 @@ app.use(cors({
         'http://localhost:5173',
         'https://fandom-jyte.onrender.com'
     ],
-    credentials: true
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
 app.use('/api/auth', authRoutes);

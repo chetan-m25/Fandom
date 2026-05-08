@@ -39,7 +39,7 @@ export default function Login() {
         if (response.data.user?.username) {
           localStorage.setItem("username", response.data.user.username);
         }
-        navigate("/home");
+        navigate("/");
       }
     } catch (err) {
       alert(err.response?.data?.message || "Invalid credentials");
@@ -62,7 +62,7 @@ export default function Login() {
         if (response.data.user?.username) {
           localStorage.setItem("username", response.data.user.username);
         }
-        navigate("/home");
+        navigate("/");
       }
     } catch (err) {
       console.error("Google Auth Error:", err);
@@ -191,6 +191,7 @@ export default function Login() {
                   onChange={handleChange}
                   type="text"
                   placeholder="Username"
+                  required
                   className="w-full px-3 py-2.5 border border-gray-400 rounded bg-white focus:border-[#7D3CE0] focus:ring-1 focus:ring-[#7D3CE0] outline-none transition text-[15px] text-gray-900"
                 />
               </div>
@@ -206,6 +207,7 @@ export default function Login() {
                     onChange={handleChange}
                     type={showPassword ? "text" : "password"}
                     placeholder="Password"
+                    required
                     className="w-full px-3 py-2.5 border border-gray-400 rounded bg-white focus:border-[#7D3CE0] focus:ring-1 focus:ring-[#7D3CE0] outline-none transition text-[15px] text-gray-900 pr-10"
                   />
                   <button

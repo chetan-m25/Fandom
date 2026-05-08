@@ -117,7 +117,7 @@ export default function Register() {
         localStorage.setItem("username", formData.username);
       }
       alert("Registration successful! Redirecting to Home...");
-      navigate("/home");
+      navigate("/");
     } catch (err) {
       console.error("Registration Error:", err.response?.data?.message);
       alert(err.response?.data?.message || "Registration failed.");
@@ -142,7 +142,7 @@ export default function Register() {
         if (response.data.user?.username) {
           localStorage.setItem("username", response.data.user.username);
         }
-        navigate("/home");
+        navigate("/");
       }
     } catch (err) {
       console.error("Google Auth Error:", err);

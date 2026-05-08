@@ -12,10 +12,7 @@ app.set('trust proxy', 1);
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: [
-        'http://localhost:5173',
-        'https://fandom-jyte.onrender.com'
-    ],
+    origin: "https://fandom-clone.vercel.app",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"]

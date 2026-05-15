@@ -131,7 +131,7 @@ export default function Login() {
                     Sign in with Google
                   </span>
                 </div>
-                <div className="opacity-0 absolute inset-0 w-full h-full z-10">
+                <div className="opacity-0 absolute inset-0 w-full h-full z-10 cursor-pointer">
                   <GoogleLogin
                     onSuccess={handleGoogleLogin}
                     onError={() => console.log("Login Failed")}

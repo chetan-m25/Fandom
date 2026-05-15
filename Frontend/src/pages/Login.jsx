@@ -129,14 +129,14 @@ export default function Login() {
                   <FcGoogle className="w-5 h-5 absolute left-4" />
                   <span className="text-[11px] font-black uppercase tracking-widest text-gray-900">
                     Sign in with Google
+                    <div className="opacity-0 absolute inset-0 w-full h-full z-10 cursor-pointer">
+                      <GoogleLogin
+                        onSuccess={handleGoogleLogin}
+                        onError={() => console.log("Login Failed")}
+                        width="400"
+                      />
+                    </div>
                   </span>
-                </div>
-                <div className="opacity-0 absolute inset-0 w-full h-full z-10 cursor-pointer">
-                  <GoogleLogin
-                    onSuccess={handleGoogleLogin}
-                    onError={() => console.log("Login Failed")}
-                    width="400"
-                  />
                 </div>
               </div>
 
